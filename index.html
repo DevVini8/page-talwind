@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechStore | Produtos (Tailwind CSS)</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand: #ffc107;
+      --color-brand-dark: #e0a800;
+      --color-ink: #212529;
+    }
+  </style>
+</head>
+<body class="bg-white pt-16 font-sans text-gray-800 antialiased">
+
+  <header>
+    <nav class="fixed inset-x-0 top-0 z-40 bg-ink shadow-md" aria-label="Menu principal">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between px-4 py-3">
+        <a href="#" class="text-xl font-bold text-white">Tech<span class="text-brand">Store</span></a>
+
+        <button id="btnMenu" type="button"
+                class="inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white/80 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand lg:hidden"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+          <svg id="iconeAbrir" class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="iconeFechar" class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <div id="menu" class="hidden w-full lg:flex lg:w-auto lg:flex-1 lg:items-center lg:justify-between lg:pl-8">
+          <ul class="mt-3 flex flex-col gap-1 lg:mt-0 lg:flex-row lg:gap-2">
+            <li><a href="#destaques" aria-current="page" class="block rounded-md px-3 py-2 font-medium text-white lg:px-2">Destaques</a></li>
+            <li><a href="#produtos" class="block rounded-md px-3 py-2 text-white/60 transition hover:bg-white/10 hover:text-white lg:px-2 lg:hover:bg-transparent">Produtos</a></li>
+            <li><a href="#tabela" class="block rounded-md px-3 py-2 text-white/60 transition hover:bg-white/10 hover:text-white lg:px-2 lg:hover:bg-transparent">Comparativo</a></li>
+            <li><a href="#contato" class="block rounded-md px-3 py-2 text-white/60 transition hover:bg-white/10 hover:text-white lg:px-2 lg:hover:bg-transparent">Contato</a></li>
+          </ul>
+          <form class="mt-3 flex gap-2 pb-2 lg:mt-0 lg:pb-0" role="search">
+            <input type="search" placeholder="Buscar..." aria-label="Buscar produtos"
+                   class="w-full rounded-md border border-gray-300 bg-white px-3 py-1.5 text-gray-900 placeholder-gray-500 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/50 lg:w-56">
+            <button type="submit"
+                    class="rounded-md border border-brand px-3 py-1.5 text-brand transition hover:bg-brand hover:text-ink">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="destaques" aria-label="Destaques" class="scroll-mt-16">
+      <div id="carrossel" class="group relative overflow-hidden" aria-roledescription="carrossel">
+        <div id="trilho" class="flex transition-transform duration-700 ease-in-out">
+
+          <div class="relative w-full shrink-0" aria-roledescription="slide" aria-label="1 de 3">
+            <img src="https://picsum.photos/seed/notebook/1600/500" alt="Notebook sobre a mesa"
+                 class="h-64 w-full object-cover brightness-70 sm:h-80 md:h-[400px]">
+            <div class="absolute inset-x-[15%] bottom-10 text-center text-white sm:bottom-12">
+              <div class="mx-auto max-w-md rounded-lg bg-ink/75 p-4 backdrop-blur-sm">
+                <h2 class="text-xl font-semibold sm:text-2xl">Notebook Pro</h2>
+                <p class="mt-2 hidden sm:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative w-full shrink-0" aria-roledescription="slide" aria-label="2 de 3">
+            <img src="https://picsum.photos/seed/smartphone/1600/500" alt="Smartphone moderno"
+                 class="h-64 w-full object-cover brightness-70 sm:h-80 md:h-[400px]">
+            <div class="absolute inset-x-[15%] bottom-10 text-center text-white sm:bottom-12">
+              <div class="mx-auto max-w-md rounded-lg bg-ink/75 p-4 backdrop-blur-sm">
+                <h2 class="text-xl font-semibold sm:text-2xl">Smartphone X</h2>
+                <p class="mt-2 hidden sm:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative w-full shrink-0" aria-roledescription="slide" aria-label="3 de 3">
+            <img src="https://picsum.photos/seed/headphone/1600/500" alt="Fone de ouvido sem fio"
+                 class="h-64 w-full object-cover brightness-70 sm:h-80 md:h-[400px]">
+            <div class="absolute inset-x-[15%] bottom-10 text-center text-white sm:bottom-12">
+              <div class="mx-auto max-w-md rounded-lg bg-ink/75 p-4 backdrop-blur-sm">
+                <h2 class="text-xl font-semibold sm:text-2xl">Fone Wave</h2>
+                <p class="mt-2 hidden sm:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button id="btnAnterior" type="button" aria-label="Anterior"
+                class="absolute inset-y-0 left-0 flex w-[12%] items-center justify-center text-white opacity-60 transition hover:opacity-100 focus:opacity-100 focus:outline-none">
+          <span class="flex size-10 items-center justify-center rounded-full bg-black/30 group-hover:bg-black/50">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+          </span>
+        </button>
+        <button id="btnProximo" type="button" aria-label="PrÃ³ximo"
+                class="absolute inset-y-0 right-0 flex w-[12%] items-center justify-center text-white opacity-60 transition hover:opacity-100 focus:opacity-100 focus:outline-none">
+          <span class="flex size-10 items-center justify-center rounded-full bg-black/30 group-hover:bg-black/50">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+          </span>
+        </button>
+
+        <div id="indicadores" class="absolute inset-x-0 bottom-3 flex justify-center gap-2">
+          <button type="button" data-slide="0" aria-label="Slide 1" class="h-1 w-8 rounded-full bg-white transition-all duration-300"></button>
+          <button type="button" data-slide="1" aria-label="Slide 2" class="h-1 w-8 rounded-full bg-white/50 transition-all duration-300"></button>
+          <button type="button" data-slide="2" aria-label="Slide 3" class="h-1 w-8 rounded-full bg-white/50 transition-all duration-300"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos" class="scroll-mt-16 py-12" aria-labelledby="titulo-produtos">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 id="titulo-produtos" class="mb-8 text-center text-3xl font-semibold">Produtos</h2>
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <article class="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <img src="https://picsum.photos/seed/notebook/600/400" alt="Notebook Pro" class="aspect-[3/2] w-full object-cover">
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="text-lg font-semibold">Notebook Pro</h3>
+              <p class="mt-1 text-gray-600">Lorem ipsum dolor sit amet.</p>
+              <p class="mt-auto pt-3 font-bold text-green-700">R$ 7.499,90</p>
+              <button type="button" data-abrir-produto
+                      data-nome="Notebook Pro" data-preco="R$ 7.499,90" data-img="https://picsum.photos/seed/notebook/600/400"
+                      class="mt-3 rounded-md bg-ink px-4 py-2 text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400">
+                Ver detalhes
+              </button>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <img src="https://picsum.photos/seed/smartphone/600/400" alt="Smartphone X" class="aspect-[3/2] w-full object-cover">
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="text-lg font-semibold">Smartphone X</h3>
+              <p class="mt-1 text-gray-600">Lorem ipsum dolor sit amet.</p>
+              <p class="mt-auto pt-3 font-bold text-green-700">R$ 3.299,00</p>
+              <button type="button" data-abrir-produto
+                      data-nome="Smartphone X" data-preco="R$ 3.299,00" data-img="https://picsum.photos/seed/smartphone/600/400"
+                      class="mt-3 rounded-md bg-ink px-4 py-2 text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400">
+                Ver detalhes
+              </button>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <img src="https://picsum.photos/seed/headphone/600/400" alt="Fone Wave" class="aspect-[3/2] w-full object-cover">
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="text-lg font-semibold">Fone Wave</h3>
+              <p class="mt-1 text-gray-600">Lorem ipsum dolor sit amet.</p>
+              <p class="mt-auto pt-3 font-bold text-green-700">R$ 899,90</p>
+              <button type="button" data-abrir-produto
+                      data-nome="Fone Wave" data-preco="R$ 899,90" data-img="https://picsum.photos/seed/headphone/600/400"
+                      class="mt-3 rounded-md bg-ink px-4 py-2 text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400">
+                Ver detalhes
+              </button>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <img src="https://picsum.photos/seed/watch/600/400" alt="Smartwatch Fit" class="aspect-[3/2] w-full object-cover">
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="text-lg font-semibold">Smartwatch Fit</h3>
+              <p class="mt-1 text-gray-600">Lorem ipsum dolor sit amet.</p>
+              <p class="mt-auto pt-3 font-bold text-green-700">R$ 1.099,00</p>
+              <button type="button" data-abrir-produto
+                      data-nome="Smartwatch Fit" data-preco="R$ 1.099,00" data-img="https://picsum.photos/seed/watch/600/400"
+                      class="mt-3 rounded-md bg-ink px-4 py-2 text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400">
+                Ver detalhes
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="tabela" class="scroll-mt-16 bg-gray-100 py-12" aria-labelledby="titulo-tabela">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 id="titulo-tabela" class="mb-8 text-center text-3xl font-semibold">Comparativo</h2>
+
+        <div class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[560px] text-left">
+              <caption class="caption-bottom px-4 py-2 text-left text-sm text-gray-500">Valores fictÃ­cios</caption>
+              <thead class="bg-ink text-white">
+                <tr>
+                  <th scope="col" class="px-4 py-3 font-semibold">Produto</th>
+                  <th scope="col" class="px-4 py-3 font-semibold">Categoria</th>
+                  <th scope="col" class="px-4 py-3 font-semibold">Garantia</th>
+                  <th scope="col" class="px-4 py-3 font-semibold">PreÃ§o</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 [&>tr]:transition-colors [&>tr]:odd:bg-gray-50 [&>tr]:hover:bg-yellow-50">
+                <tr><th scope="row" class="px-4 py-3 font-semibold">Notebook Pro</th><td class="px-4 py-3">Notebook</td><td class="px-4 py-3">24 meses</td><td class="px-4 py-3">R$ 7.499,90</td></tr>
+                <tr><th scope="row" class="px-4 py-3 font-semibold">Smartphone X</th><td class="px-4 py-3">Smartphone</td><td class="px-4 py-3">12 meses</td><td class="px-4 py-3">R$ 3.299,00</td></tr>
+                <tr><th scope="row" class="px-4 py-3 font-semibold">Fone Wave</th><td class="px-4 py-3">AcessÃ³rio</td><td class="px-4 py-3">6 meses</td><td class="px-4 py-3">R$ 899,90</td></tr>
+                <tr><th scope="row" class="px-4 py-3 font-semibold">Smartwatch Fit</th><td class="px-4 py-3">AcessÃ³rio</td><td class="px-4 py-3">12 meses</td><td class="px-4 py-3">R$ 1.099,00</td></tr>
+                <tr><th scope="row" class="px-4 py-3 font-semibold">Tablet Air</th><td class="px-4 py-3">Tablet</td><td class="px-4 py-3">12 meses</td><td class="px-4 py-3">R$ 2.799,00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="scroll-mt-16 py-12" aria-labelledby="titulo-contato">
+      <div class="mx-auto max-w-xl px-4">
+        <h2 id="titulo-contato" class="mb-8 text-center text-3xl font-semibold">Contato</h2>
+
+        <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <form id="formContato" class="group grid grid-cols-1 gap-4 sm:grid-cols-2" novalidate>
+            <div>
+              <label for="nome" class="mb-1 block font-medium">Nome</label>
+              <input type="text" id="nome" required minlength="3"
+                     class="peer w-full rounded-md border border-gray-300 px-3 py-2 focus:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-brand/40 group-data-validated:invalid:border-red-500 group-data-validated:valid:border-green-600">
+              <p class="mt-1 hidden text-sm text-red-600 group-data-validated:peer-invalid:block">Informe seu nome (mÃ­n. 3 letras).</p>
+            </div>
+
+            <div>
+              <label for="email" class="mb-1 block font-medium">E-mail</label>
+              <input type="email" id="email" required
+                     class="peer w-full rounded-md border border-gray-300 px-3 py-2 focus:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-brand/40 group-data-validated:invalid:border-red-500 group-data-validated:valid:border-green-600">
+              <p class="mt-1 hidden text-sm text-red-600 group-data-validated:peer-invalid:block">Informe um e-mail vÃ¡lido.</p>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="assunto" class="mb-1 block font-medium">Assunto</label>
+              <select id="assunto" required
+                      class="peer w-full rounded-md border border-gray-300 bg-white px-3 py-2 focus:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-brand/40 group-data-validated:invalid:border-red-500 group-data-validated:valid:border-green-600">
+                <option value="">Selecione...</option>
+                <option>DÃºvida sobre produto</option>
+                <option>Pedido / entrega</option>
+                <option>Garantia</option>
+                <option>Outro</option>
+              </select>
+              <p class="mt-1 hidden text-sm text-red-600 group-data-validated:peer-invalid:block">Selecione um assunto.</p>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="mensagem" class="mb-1 block font-medium">Mensagem</label>
+              <textarea id="mensagem" rows="4" required
+                        class="peer w-full resize-y rounded-md border border-gray-300 px-3 py-2 focus:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-brand/40 group-data-validated:invalid:border-red-500 group-data-validated:valid:border-green-600"></textarea>
+              <p class="mt-1 hidden text-sm text-red-600 group-data-validated:peer-invalid:block">Escreva uma mensagem.</p>
+            </div>
+
+            <button type="submit"
+                    class="rounded-md bg-ink px-4 py-2.5 font-medium text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400 sm:col-span-2">
+              Enviar
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-ink py-6 text-center text-white">
+    <p>&copy; 2026 TechStore. Todos os direitos reservados. <span class="text-white/50">â€” versÃ£o Tailwind CSS</span></p>
+  </footer>
+
+  <div id="modalProduto" role="dialog" aria-modal="true" aria-labelledby="modalProdutoTitulo" aria-hidden="true"
+       class="modal pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 opacity-0 transition-opacity duration-300">
+    <div class="modal-caixa w-full max-w-md scale-95 rounded-lg bg-white shadow-xl transition-transform duration-300">
+      <div class="flex items-center justify-between border-b border-gray-200 px-5 py-4">
+        <h2 id="modalProdutoTitulo" class="text-lg font-semibold"></h2>
+        <button type="button" data-fechar aria-label="Fechar"
+                class="rounded-md p-1 text-gray-500 transition hover:bg-gray-100 hover:text-gray-900">
+          <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+      <div class="p-5">
+        <img id="modalProdutoImg" src="" alt="" class="mb-4 aspect-[3/2] w-full rounded-md object-cover">
+        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p id="modalProdutoPreco" class="my-3 text-xl font-bold text-green-700"></p>
+        <form id="formCompra" class="flex gap-2">
+          <label for="quantidade" class="sr-only">Quantidade</label>
+          <input type="number" id="quantidade" value="1" min="1" required
+                 class="w-24 rounded-md border border-gray-300 px-3 py-2 focus:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-brand/40">
+          <button type="button" data-fechar
+                  class="rounded-md border border-gray-300 px-4 py-2 text-gray-700 transition hover:bg-gray-100">Cancelar</button>
+          <button type="submit"
+                  class="flex-1 rounded-md bg-brand px-4 py-2 font-medium text-ink transition hover:bg-brand-dark">Comprar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalConfirmacao" role="dialog" aria-modal="true" aria-labelledby="modalConfirmacaoTitulo" aria-hidden="true"
+       class="modal pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 opacity-0 transition-opacity duration-300">
+    <div class="modal-caixa w-full max-w-sm scale-95 rounded-lg bg-white text-center shadow-xl transition-transform duration-300">
+      <div class="p-6">
+        <div class="mx-auto mb-3 flex size-12 items-center justify-center rounded-full bg-green-100 text-green-700">
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+        </div>
+        <h2 id="modalConfirmacaoTitulo" class="text-xl font-semibold">Sucesso!</h2>
+        <p id="modalConfirmacaoMsg" class="mt-1 text-gray-600"></p>
+      </div>
+      <div class="flex justify-center border-t border-gray-200 px-5 py-3">
+        <button type="button" data-fechar
+                class="rounded-md bg-ink px-6 py-2 text-white transition hover:bg-black">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
